@@ -54,7 +54,7 @@ public class PrintPrimes {
             printNumbers(primes, numberOfPrimes);
         }
 
-        private void printNumbers(int[] primes, int numberOfPrimes) {
+        private void printNumbers(int[] numbers, int numberOfPrimes) {
             pagenumber = 1;
             pageoffset = 1;
             while (pageoffset <= numberOfPrimes) {
@@ -64,7 +64,7 @@ public class PrintPrimes {
                 for (rowoffset = pageoffset; rowoffset < pageoffset + linesPerPage; rowoffset++) {
                     for (column = 0; column < columns; column++)
                         if (rowoffset + column * linesPerPage <= numberOfPrimes)
-                            System.out.format("%10d", primes[rowoffset + column * linesPerPage]);
+                            System.out.format("%10d", numbers[rowoffset + column * linesPerPage]);
                     System.out.println("");
                 }
                 System.out.println("\f");
