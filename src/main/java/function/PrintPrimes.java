@@ -51,23 +51,25 @@ public class PrintPrimes {
                 primeIndex = primeIndex + 1;
                 primes[primeIndex] = candidate;
             }
-            {
-                pagenumber = 1;
-                pageoffset = 1;
-                while (pageoffset <= numberOfPrimes) {
-                    System.out.println("The First " + numberOfPrimes +
-                            " Prime Numbers --- Page " + pagenumber);
+            printNumbers();
+        }
+
+        private void printNumbers() {
+            pagenumber = 1;
+            pageoffset = 1;
+            while (pageoffset <= numberOfPrimes) {
+                System.out.println("The First " + numberOfPrimes +
+                        " Prime Numbers --- Page " + pagenumber);
+                System.out.println("");
+                for (rowoffset = pageoffset; rowoffset < pageoffset + linesPerPage; rowoffset++) {
+                    for (column = 0; column < columns; column++)
+                        if (rowoffset + column * linesPerPage <= numberOfPrimes)
+                            System.out.format("%10d", primes[rowoffset + column * linesPerPage]);
                     System.out.println("");
-                    for (rowoffset = pageoffset; rowoffset < pageoffset + linesPerPage; rowoffset++) {
-                        for (column = 0; column < columns; column++)
-                            if (rowoffset + column * linesPerPage <= numberOfPrimes)
-                                System.out.format("%10d", primes[rowoffset + column * linesPerPage]);
-                        System.out.println("");
-                    }
-                    System.out.println("\f");
-                    pagenumber = pagenumber + 1;
-                    pageoffset = pageoffset + linesPerPage * columns;
                 }
+                System.out.println("\f");
+                pagenumber = pagenumber + 1;
+                pageoffset = pageoffset + linesPerPage * columns;
             }
         }
     }
