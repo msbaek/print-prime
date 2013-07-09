@@ -19,7 +19,12 @@
 			<artifactId>fitnesse</artifactId>
 			<version>20081201</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit-dep</artifactId>
+            <version>4.10</version>
+        </dependency>
+    </dependencies>
 	<build>
 		<finalName>cleancoders</finalName>
 	</build>
