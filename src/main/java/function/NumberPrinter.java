@@ -1,19 +1,15 @@
 package function;
 
 class NumberPrinter {
-    private int[] numbers;
-    private int numberOfPrimes;
     private int linesPerPage;
     private int columns;
 
-    public NumberPrinter(int[] numbers, int numberOfPrimes, int linesPerPage, int columns) {
-        this.numbers = numbers;
-        this.numberOfPrimes = numberOfPrimes;
+    public NumberPrinter(int linesPerPage, int columns) {
         this.linesPerPage = linesPerPage;
         this.columns = columns;
     }
 
-    public void invoke() {
+    public void invoke(int[] numbers, int numberOfPrimes) {
         int pagenumber = 1;
         int pageoffset = 1;
         while (pageoffset <= numberOfPrimes) {

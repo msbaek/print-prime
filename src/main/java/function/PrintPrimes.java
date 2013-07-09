@@ -54,7 +54,7 @@ public class PrintPrimes {
         }
 
         private void printNumbers(int[] numbers, int numberOfPrimes, int linesPerPage, int columns) {
-            new NumberPrinter(numbers, numberOfPrimes, linesPerPage, columns).invoke();
+            new NumberPrinter(linesPerPage, columns).invoke(numbers, numberOfPrimes);
         }
 
     }
